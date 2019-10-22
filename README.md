@@ -12,14 +12,6 @@ I wanted a minimal environment in which I could explore what was actually happen
 with Cobra, Viper, PFlag, Mapstructure, etc. A way to test hypotheses I would make about behavior
 based on reading the code.
 
-## What's with the fork?
-
-CobraLab uses my fork of Cobra via a replace directive. The fork has a variety of pending PRs from 
-the Cobra project merged. Once Cobra finishes the process of moving to a 1.0 release, if I'm still
-using this, I'll retool it onto that release.
-
-Until I make a release, the replace points to a local clone of the fork, as it was simpler.
-
 ## Examples
 
 1. [Generator page](https://github.com/spf13/cobra/blob/master/cobra/README.md)
