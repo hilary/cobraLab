@@ -32,3 +32,7 @@ cobraLab k8s options
 
    where `cobraLab k8s` is not Runnable. Cobra shows help in all the various ways (`--help`, 
    `help k8s`, and `cobraLab k8s`) despite the [open issue to the contrary](https://github.com/spf13/cobra/issues/790).
+
+1. [Multilevel modern](https://github.com/hilary/cobraLab/tree/multilevel_modern)
+
+    Multilevel commands, but uses the community pattern for CLIs, with `cmd/cobraLab/main.go`.

@@ -15,8 +15,8 @@ limitations under the License.
 */
 package main
 
-import "github.com/hilary/cobraLab/cmd"
+import "github.com/hilary/cobraLab/command"
 
 func main() {
-  cmd.Execute()
+  command.Execute()
 }
