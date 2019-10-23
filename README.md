@@ -13,20 +13,22 @@ I wanted a minimal environment in which I could explore what was actually happen
 with Cobra, Viper, PFlag, Mapstructure, etc. A way to test hypotheses I would make about behavior
 based on reading the code.
 
-## What's with the fork?
-
-Some branches of CobraLab use my fork of Cobra via a replace
-directive. The fork has a variety of pending PRs from the Cobra
-project merged.
-
-The replace directive points to a local clone of the fork, as it was
-simpler.
-
 ## Examples
 
 1. [Generator page](https://github.com/spf13/cobra/blob/master/cobra/README.md)
 
-    In branch
-    [generator_page_example](https://github.com/hilary/cobraLab/tree/generator_page_example),
-    the example from the README for Cobra's generator.
+    [generator_page_example](https://github.com/hilary/cobraLab/tree/generator_page_example) has
+    the example from the README for Cobra's generator. Works fine once you run `go mod init [module]`
+    as discussed above.
 
+1. [Multilevel command](https://github.com/hilary/cobraLab/tree/multilevel_command)
+
+   Has multilevel commands:
+    
+````
+cobraLab k8s cluster
+cobraLab k8s options
+````
+
+   where `cobraLab k8s` is not Runnable. Cobra shows help in all the various ways (`--help`, 
+   `help k8s`, and `cobraLab k8s`) despite the [open issue to the contrary](https://github.com/spf13/cobra/issues/790).
