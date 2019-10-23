@@ -15,11 +15,9 @@ based on reading the code.
 
 ## Examples
 
-1. [Generator page](https://github.com/spf13/cobra/blob/master/cobra/README.md)
+1. [Multilevel modern](https://github.com/hilary/cobraLab/tree/multilevel_modern)
 
-    [generator_page_example](https://github.com/hilary/cobraLab/tree/generator_page_example) has
-    the example from the README for Cobra's generator. Works fine once you run `go mod init [module]`
-    as discussed above.
+    Multilevel commands, but uses the community pattern for CLIs, with `cmd/cobraLab/main.go`.
 
 1. [Multilevel command](https://github.com/hilary/cobraLab/tree/multilevel_command)
 
@@ -32,3 +30,10 @@ cobraLab k8s options
 
    where `cobraLab k8s` is not Runnable. Cobra shows help in all the various ways (`--help`, 
    `help k8s`, and `cobraLab k8s`) despite the [open issue to the contrary](https://github.com/spf13/cobra/issues/790).
+
+1. [Generator page](https://github.com/spf13/cobra/blob/master/cobra/README.md)
+
+    [generator_page_example](https://github.com/hilary/cobraLab/tree/generator_page_example) has
+    the example from the README for Cobra's generator. Works fine once you run `go mod init [module]`
+    as discussed above.
+
