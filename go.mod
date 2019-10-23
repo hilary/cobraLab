@@ -1,4 +1,4 @@
-module cobraLab
+module github.com/hilary/cobraLab
 
 go 1.13
 
