@@ -20,7 +20,6 @@ import (
 	"github.com/spf13/cobra"
 	"os"
 
-	homedir "github.com/mitchellh/go-homedir"
 	"github.com/spf13/viper"
 )
 
@@ -53,7 +52,11 @@ func init() {
 	// Cobra supports persistent flags, which, if defined here,
 	// will be global for your application.
 
-	rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.cobraLab.yaml)")
+	rootCmd.PersistentFlags().StringVar(
+		&cfgFile,
+		"config", "",
+		fmt.Sprintf("config file (default is %v/.cobraLab.yaml)", configDir()),
+	)
 
 	// Cobra also supports local flags, which will only run
 	// when this action is called directly.
@@ -66,15 +69,8 @@ func initConfig() {
 		// Use config file from the flag.
 		viper.SetConfigFile(cfgFile)
 	} else {
-		// Find home directory.
-		home, err := homedir.Dir()
-		if err != nil {
-			fmt.Println(err)
-			os.Exit(1)
-		}
-
-		// Search config in home directory with name ".cobraLab" (without extension).
-		viper.AddConfigPath(home)
+		// Search config in config directory with name ".cobraLab" (without extension).
+		viper.AddConfigPath(configDir())
 		viper.SetConfigName(".cobraLab")
 	}
 
@@ -84,4 +80,13 @@ func initConfig() {
 	if err := viper.ReadInConfig(); err == nil {
 		fmt.Println("Using config file:", viper.ConfigFileUsed())
 	}
+}
+
+func configDir() string {
+	cfgDir, err := os.UserConfigDir()
+	if err != nil {
+		fmt.Println(err)
+		os.Exit(1)
+	}
+	return cfgDir
 }
